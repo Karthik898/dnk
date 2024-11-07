@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detials</title>
+    <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="products.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+}
+
+header {
+    background-color: #3c8d29;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cart Container */
+.cart-container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.cart-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.cart-table input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.promo-code {
+    margin-top: 20px;
+}
+
+.promo-code input {
+    padding: 8px;
+    width: 200px;
+}
+
+.promo-code button {
+    padding: 8px 15px;
+    background-color: #3c8d29;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.promo-code button:hover {
+    background-color: #2c6a1b;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    background-color: #3c8d29;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.action-buttons button:hover {
+    background-color: #2c6a1b;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+}
+    </style>
+    </head>
+  <body>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html"> <img src="images/logo.png" width="125px" /></a>
+           </div>
+           <nav>
+            <ul id="MenuItems">
+              <li><a href="index.html">Home</a></li>
+             <li class="dropdown" onclick=" menutoggl()"><a class="active">Products
+                <i class="fas fa-caret-down"></i>
+              </a>
+                <ul id="inneritems">
+                  <li><a href="sweets-product.html">Bandar sweets</a></li>
+                  <li><a href="saree-product.html"> kalamkari Sarees</a></li>
+                  <li><a href="seasonal-product.html">Mangoes</a></li>
+                  <li><a href="1gram-product.html">1gram jewellary</a></li>
+                  <li><a href="Carpets-product.html">Carpets</a></li>
+                  <li><a href="toys-product.html"> kondapalli Toys</a></li>
+  
+                </ul>
+              </li>
+               <li><a href="about.html"> Sellers & shop Info</a></li>
+              <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+          </nav>
+           <a href="cart.html"><img src="cart.jpeg" width="30px" height="30px"></a>
+           <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+         </div>
+      </div>
+<!-- ---------cart items details-------- -->
+<div class="account-page">
+<div class="small-container cart-page">
+    <table>
+      <main class="cart-container">
+        <h2>Your Cart</h2>
+        <p>Review your selected items before proceeding to checkout.</p>
+
+        <!-- Cart Table -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="bullock-cart.jpg" alt="Kondapalli Bullock Cart"> Kondapalli Bullock Cart</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>$50</td>
+                    <td>$50</td>
+                    <td><button class="remove-item">Remove</button></td>
+                </tr>
+                <tr>
+                    <td><img src="pedana-saree.jpg" alt="Pedana Block-Printed Saree"> Pedana Block-Printed Saree</td>
+                    <td><input type="number" value="2" min="1"></td>
+                    <td>$60</td>
+                    <td>$120</td>
+                    <td><button class="remove-item">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <p><strong>Subtotal:</strong> $170</p>
+            <p><strong>Estimated Shipping:</strong> $15</p>
+            <p><strong>Total:</strong> $185</p>
+        </div>
+
+        <!-- Promo Code Section -->
+        <div class="promo-code">
+            <label for="promo-code">Enter Promo Code:</label>
+            <input type="text" id="promo-code" placeholder="Enter code here">
+            <button class="apply-promo">Apply</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="continue-shopping">Continue Shopping</button>
+            <button class="checkout">Proceed to Checkout</button>
+        </div>
+      </main>
+
+
+
+
+</div>
+     <!-- -------footer------ -->
+     <footer class="footer">
+      <div class="container-f">
+        <div class="row-f">
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="sweets-product.html">Bandar sweets</a></li>
+                <li><a href="saree-product.html"> kalamkari Sarees</a></li>
+                <li><a href="seasonal-product.html">Mangoes</a></li>
+                <li><a href="1gram-product.html">1gram jewellary</a></li>
+                <li><a href="Carpets-product.html">Carpets</a></li>
+                <li><a href="toys-product.html"> kondapalli Toys</a></li>
+
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div> 
+            <div class="footer-col">
+              <h4>company</h4>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+        </div>
+          <hr><div class="copyright text-center">
+            <h5><a href="#">🌐</a> copyright © 2024 Regional Treasures.com all rights reserved</h5>
+           
+          </div>
+        </div>  
+   </footer>
+    
+<!-- -------js for toggle menu----- -->
+<script>
+  var MenuItems = document.getElementById("MenuItems");
+  var MenuItem = document.getElementById("inneritems");
+  MenuItems.style.maxHeight = "0px";
+
+  function menutoggle(){
+    if(MenuItems.style.maxHeight == "0px")
+    {
+     MenuItems.style.maxHeight = "200px";
+    }
+    else
+    {
+     MenuItems.style.maxHeight = "0px";
+    }
+   
+  }
+  function menutoggl(){
+    if(MenuItem.style.display == "block")
+    {
+     MenuItem.style.display = "none";
+    }
+    else
+    {
+     MenuItem.style.display = "block";
+    }
+   
+  }
+     </script>
+
+  </body>
+</html>

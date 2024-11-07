@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Regional Treasures</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="products.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #ff523b;
+      color:aqua;
+      padding: 8px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: aqua;
+      color: #ff523b;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+      .column, input[type="submit"] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body bgcolor="#00ffff" align="center">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo.jpg" width="50px" /></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown" onclick="menutoggl()">
+            <a class="active">Products <i class="fas fa-caret-down"></i></a>
+            <ul id="inneritems">
+              <li><a href="sweets-product.html">Bandar sweets</a></li>
+                <li><a href="saree-product.html"> kalamkari Sarees</a></li>
+                <li><a href="seasonal-product.html">Mangoes</a></li>
+                <li><a href="1gram-product.html">1gram jewellary</a></li>
+                <li><a href="Carpets-product.html">Carpets</a></li>
+                <li><a href="toys-product.html"> kondapalli Toys</a></li>
+
+            </ul>
+          </li>
+          <li><a href="about.html">Sellers &shop Info</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html"><img src="cart.jpeg" width="30px" height="30px"></a>
+      <img src="menu1.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+  </div>
+
+  <div class="account-page">
+    <div class="container"> 
+      <div style="text-align:center">
+ <div class="row">
+        <div class="column">
+        <h2>Your Profile</h2>
+  
+     
+          <form name="contactForm" onsubmit="return display()">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name.." onchange="nameval(this)" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Your contact number.." onchange="mobileval()" required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email" onchange="emailval()" required>
+
+            
+            <label for="address">Address</label>
+            <textarea id="text" name="address" placeholder="Describe your address correctly..." style="height: 170px" required></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container-f">
+      <div class="row-f">
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="sweets-product.html">Bandar sweets</a></li>
+                <li><a href="saree-product.html"> kalamkari Sarees</a></li>
+                <li><a href="seasonal-product.html">Mangoes</a></li>
+                <li><a href="1gram-product.html">1gram jewellary</a></li>
+                <li><a href="Carpets-product.html">Carpets</a></li>
+                <li><a href="toys-product.html"> kondapalli Toys</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="copyright text-center">
+        
+      </div>
+    </div>  
+  </footer>
+
+  <script>
+    function menutoggle() {
+      var MenuItems = document.getElementById("MenuItems");
+      if (MenuItems.style.maxHeight === "0px") {
+        MenuItems.style.maxHeight = "200px";
+      } else {
+        MenuItems.style.maxHeight = "0px";
+      }
+    }
+
+    function menutoggl() {
+      var MenuItem = document.getElementById("inneritems");
+      MenuItem.style.display = MenuItem.style.display === "block" ? "none" : "block";
+    }
+
+    function nameval(t) {
+      var u = /^[a-zA-Z\s\-]+$/;
+      if (!u.test(t.value)) {
+        alert("Name allows only alphabets and spaces.");
+        t.focus();
+      }
+    }
+
+    function emailval() {
+      var mail = document.getElementById("email").value;
+      var m = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+      if (!m.test(mail)) {
+        alert("Wrong email format.");
+        document.getElementById("email").focus();
+      }
+    }
+
+    function mobileval() {
+      var mobile = document.getElementById("mobile").value;
+      var mob = /^[6-9]\d{9}$/;
+      if (!mob.test(mobile)) {
+        alert("Invalid mobile number. Please enter a valid 10-digit number starting with 6-9.");
+        document.getElementById("mobile").focus();
+      }
+    }
+
+    function display() {
+      var requiredFields = ["name", "email", "mobile", "address"];
+      var isValid = true;
+
+      requiredFields.forEach(function(field) {
+        if (document.getElementById(field).value === "") {
+          alert("Please fill in all the fields.");
+          isValid = false;
+          return false;
+        }
+      });
+
+      if (isValid) {
+        alert("Message sent successfully. We will get back to you soon.");
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>
